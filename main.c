@@ -28,6 +28,7 @@ int main(void)
 		}
 	    // change stage
 	    change_stage(num, &board);
+	    printf("%i ", verdict_check(&board, num));	    
 	}
 
     

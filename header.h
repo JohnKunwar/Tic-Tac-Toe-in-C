@@ -16,3 +16,4 @@ struct board_stage
 void init_board_stage(struct board_stage *); // initalize the board
 void draw_board(struct board_stage *); // draws the board
 void change_stage(int num, struct board_stage *);
+int verdict_check(struct board_stage *board, int num);
