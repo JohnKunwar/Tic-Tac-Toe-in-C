@@ -1,8 +1,7 @@
 # Tic Tac Toe
 Terminal base simple tic tac toe game with bot.
-The bot is very bad. Only places 'O' at random position. I should probably write a good bot future in future :P.
+The bot is very bad. Only places 'O' at random position. I should probably write a good bot in future :P
 
-#Gameplay
 ![gameplay](https://github.com/JohnKunwar/Tic-Tac-Toe-in-C-/blob/main/gameplay.png)
 
 
