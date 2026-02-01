@@ -86,18 +86,43 @@ bool win_check (struct board_stage *board, int num)
     
     return false;
 }
+bool draw(struct board_stage *board)
+{
+    int count = 0;
+    
+    for (int i = 0; i < 3; i++)
+	{
+	    for (int j = 0; j < 3; j++)
+		{
+		    if (board->arr[i][j] != 0)
+			count++;
+		}
+	}
+
+    printf("count: %i\n", count);
+    if (count == 9)
+	return true;
+
+    return false;
+}
+
 
 // returns 1 for wins returns 0 for nothing happens and return -1 for draw
 int verdict_check(struct board_stage *board, int num)
 {
     bool won = win_check(board, num);
-
+    bool is_draw = draw(board);
     if (won == true)
 	{
 	    printf("won\n");
 	    return 1; 
 	}
-
+    else if (is_draw == true)
+	{
+	    printf("draw\n");
+	    return -1;
+	}
+    
     return 0;
 //    draw_check(); //
 //    loss_check();

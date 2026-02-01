@@ -13,8 +13,11 @@ int main(void)
 	{
 	    char c[100]; // this is a buffer
 	    int num;
-	    
+
+	    // draw the board
 	    draw_board(&board);
+
+	    // Input
 	    printf("Enter your move: ");
 	    while(fgets(c, 100, stdin)) // runs until correct input has been written
 		{
@@ -26,9 +29,23 @@ int main(void)
 
 		    printf("Enter your move(digit from 1-9): ");		    
 		}
-	    // change stage
-	    change_stage(num, &board);
-	    printf("%i ", verdict_check(&board, num));	    
+	    
+	    // Update board
+	    change_player_stage(num, &board);
+
+	    // call bot
+	    bot_move(&board);
+
+	    // Check whether win
+	    int v_check = verdict_check(&board, num); // 1 means win, -1 means draw and 0 means nothing happen
+	    if (v_check == 1)
+		{
+		    won_celeberation();
+		}
+	    if (v_check == -1)
+		{
+		    printf("draw\n");
+		}
 	}
 
     
