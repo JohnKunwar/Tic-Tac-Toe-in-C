@@ -16,13 +16,32 @@ int bot_move(struct board_stage *board)
 
 		    if (win_check(&board_copy, i) == true)
 			{
-			    printf("it works\n");
 			    change_bot_stage(i , board);			    
 			    return i;			    
 			}
 
 		}
 	}
+    // two layer bot checks the next player moves wins if so place the tile their
+    for (int i = 1; i <= 9; i++)
+	{
+	    if (check_availabity(i , board) == false)
+		continue;
+	    else
+		{
+		    // make copy of board
+		    struct board_stage board_copy = *board;
+		    change_player_stage(i, &board_copy);
+
+		    if (win_check(&board_copy, i) == true)
+			{
+			    printf("it works\n");
+			    change_bot_stage(i , board);			    
+			    return i;			    
+			}
+
+		}
+	}    
     
     srand(time(NULL));
     int random_num = (rand() % 9) + 1;
