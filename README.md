@@ -15,5 +15,9 @@ a tile their. Only way to win is to create a fork to the bot :P
 ![gameplay](https://github.com/JohnKunwar/Tic-Tac-Toe-in-C-/blob/main/gameplay.png)
 
 
+
+# Run
+Just clone and run make
+
 # Issue
 Uses srand and rand on file bot.c so for windows modification is needed. 
